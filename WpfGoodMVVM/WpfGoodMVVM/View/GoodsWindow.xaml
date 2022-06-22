@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfGoodMVVM.View.GoodsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfGoodMVVM.View"
+        mc:Ignorable="d"
+        Title="GoodsWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="20" Margin="10" Padding="5">修改商品信息</TextBlock>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <TextBlock FontSize="20" Margin="10" Padding="5">商品名称</TextBlock>
+            <TextBox x:Name="txtName" FontSize="20" Padding="5" Text="{Binding Model.GoodsName}"></TextBox>
+            <TextBlock FontSize="20" Margin="10" Padding="5">生产厂商</TextBlock>
+            <TextBox x:Name="txtProducers" FontSize="20" Padding="5" Text="{Binding Model.Producers}"></TextBox>
+            <TextBlock FontSize="20" Margin="10" Padding="5">生产地址</TextBlock>
+            <TextBox x:Name="txtAddress" FontSize="20" Padding="5" Text="{Binding Model.Address}"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btuSave" Content="保存" Margin="10" Padding="5" Click="btuSave_Click" Width="100" Height="40" FontSize="20"></Button>
+            <Button x:Name="btuCancel" Content="取消" Margin="10" Padding="5" Click="btuCancel_Click"  Width="100" Height="40" FontSize="20"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
